@@ -1,0 +1,52 @@
+@page
+@model RazorPagesMovie.Pages.Movie.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Addmovie[0].Moviename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Addmovie[0].Actor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Addmovie[0].Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Addmovie[0].Language)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Addmovie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Moviename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                
+                <a asp-page="./Details" asp-route-id="@item.VID">Details</a>
+              
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

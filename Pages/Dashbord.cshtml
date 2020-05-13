@@ -1,0 +1,50 @@
+@page
+@model RazorPagesMovie.Pages.DashbordModel
+@{
+    ViewData["Title"] ="Dashbord";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>dashbord</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RecordofUser[0].RecordsId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecordofUser[0].Addmovie.Moviename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecordofUser[0].TakenDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecordofUser[0].ReturnDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RecordofUser) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecordsId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Addmovie.Moviename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TakenDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+
+       </td>
+      </tr>
+}
+    </tbody>
+</table>

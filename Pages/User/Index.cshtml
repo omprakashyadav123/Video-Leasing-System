@@ -1,0 +1,54 @@
+@page
+@model RazorPagesMovie.Pages.User.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adduser[0].Uname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adduser[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adduser[0].phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adduser[0].password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Adduser) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.UID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.UID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.UID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
